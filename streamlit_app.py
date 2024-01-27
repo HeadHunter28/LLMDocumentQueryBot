@@ -80,7 +80,7 @@ if __name__ == "__main__":
     st.image('firstimage.jpg')
     st.subheader('LLM Resume Parsing Application')
     with st.sidebar:
-        api_key=st.text_input('OpenAI API key:',type='password')
+        api_key=st.text_input('OpenAI API key (optional) :',type='password')
         if api_key:
             os.environ['OPENAI_API_KEY']=api_key
 
