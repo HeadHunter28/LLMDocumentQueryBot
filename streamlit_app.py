@@ -78,13 +78,16 @@ if __name__ == "__main__":
     load_dotenv(find_dotenv(),override=True)
     
     st.image('firstimage.jpg')
-    st.subheader('LLM Resume Parsing Application')
+    st.subheader('LLM Document Query Bot')
     with st.sidebar:
         api_key=st.text_input('OpenAI API key (optional) :',type='password')
         if api_key:
             os.environ['OPENAI_API_KEY']=api_key
+        
 
         uploaded_file = st.file_uploader('Upload a file:', type=['pdf','docx','txt'])
+
+        st.write("Optional optimizing parameters :")
 
         chunk_size=st.number_input('Chunk size:',min_value=100,max_value=2048,value=512,on_change=clear_history)
 
