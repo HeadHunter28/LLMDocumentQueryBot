@@ -77,7 +77,7 @@ if __name__ == "__main__":
     from dotenv import load_dotenv,find_dotenv
     load_dotenv(find_dotenv(),override=True)
     
-    st.image('firstimage.jpg')
+    st.image('firstimage.png')
     st.subheader('LLM Document Query Bot')
     with st.sidebar:
         api_key=st.text_input('OpenAI API key (optional) :',type='password')
