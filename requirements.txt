@@ -7,3 +7,5 @@ streamlit
 docx2txt
 pypdf
 chromadb
+pysqlite3-binary
+
