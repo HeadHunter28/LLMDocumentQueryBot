@@ -19,16 +19,16 @@ def load_document(file):
     name,extension = os.path.splitext(file)
     
     if extension == '.pdf' :
-        from langchain.document_loaders import PyPDFLoader
+        from langchain_community.document_loaders import PyPDFLoader
         loader=PyPDFLoader(file)
     elif extension == '.docx':
-        from langchain.document_loaders import Docx2txtLoader
+        from langchain_community.document_loaders import Docx2txtLoader
         loader=Docx2txtLoader(file)
     elif extension == '.csv':
-        from langchain.document_loaders import CSVLoader
+        from langchain_community.document_loaders import CSVLoader
         loader=CSVLoader(file)
     elif extension == '.txt':
-        from langchain.document_loaders import TextLoader
+        from langchain_community.document_loaders import TextLoader
         loader=TextLoader(file)
     
     else :
@@ -41,7 +41,7 @@ def load_document(file):
 
 
 def chunk_data(data,chunk_size=256,chunk_overlap=20):
-    from langchain.text_splitter import RecursiveCharacterTextSplitter
+    from langchain_community.text_splitter import RecursiveCharacterTextSplitter
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size,chunk_overlap=chunk_overlap)
     chunks = text_splitter.split_documents(data)
     return chunks
@@ -52,8 +52,8 @@ def create_embeddings(chunks):
     return vector_store
 
 def ask_and_get_answer(vector_store,q,k=3):
-    from langchain.chains import RetrievalQA
-    from langchain.chat_models import ChatOpenAI
+    from langchain_community.chains import RetrievalQA
+    from langchain_community.chat_models import ChatOpenAI
     
     llm = ChatOpenAI(model='gpt-4',temperature=1)
     
