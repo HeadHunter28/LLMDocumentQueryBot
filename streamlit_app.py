@@ -1,5 +1,5 @@
 import streamlit as st 
-
+import langchain
 from langchain_community.embeddings.openai import OpenAIEmbeddings
 
 from langchain_community.vectorstores import Chroma
@@ -41,7 +41,7 @@ def load_document(file):
 
 
 def chunk_data(data,chunk_size=256,chunk_overlap=20):
-    from langchain_community.text_splitter import RecursiveCharacterTextSplitter
+    from langchain.text_splitter import RecursiveCharacterTextSplitter
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size,chunk_overlap=chunk_overlap)
     chunks = text_splitter.split_documents(data)
     return chunks
