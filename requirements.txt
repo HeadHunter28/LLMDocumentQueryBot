@@ -8,6 +8,6 @@ streamlit
 docx2txt
 pypdf
 chromadb
-protobuf==3.20
+protobuf==3.20.1
 pysqlite3-binary
 
