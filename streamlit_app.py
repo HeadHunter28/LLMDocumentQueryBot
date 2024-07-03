@@ -52,7 +52,7 @@ def create_embeddings(chunks):
     return vector_store
 
 def ask_and_get_answer(vector_store,q,k=3):
-    from langchain_community.chains import RetrievalQA
+    from langchain.chains.retrieval_qa.base import RetrievalQA
     from langchain_community.chat_models import ChatOpenAI
     
     llm = ChatOpenAI(model='gpt-4',temperature=1)
