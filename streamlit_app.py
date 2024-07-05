@@ -80,8 +80,11 @@ def clear_history():
 
 if __name__ == "__main__":
     import os
-    from dotenv import load_dotenv,find_dotenv
-    load_dotenv(find_dotenv(),override=True)
+    #from dotenv import load_dotenv,find_dotenv
+    #load_dotenv(find_dotenv(),override=True)
+    OPENAI_API_KEY=st.secrets['OPENAI_API_KEY']
+    PINECONE_API_KEY=st.secrets['PINECONE_API_KEY']
+    PINECONE_ENV=st.secrets['PINECONE_ENV']
     
     st.image('firstimage.png')
     st.subheader('LLM Document Query Bot')
